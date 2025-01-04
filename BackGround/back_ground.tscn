@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cabtorck80qiq"]
+
+[ext_resource type="Texture2D" uid="uid://qdp6q3h8qbfj" path="res://BackGround/Space_BG (2 frames) (64 x 64).png" id="1_esc2u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xw1pa"]
+texture = ExtResource("1_esc2u")
+texture_region_size = Vector2i(64, 64)
+0:0/animation_columns = 2
+0:0/animation_speed = 3.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_aixnj"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_xw1pa")
+
+[node name="BackGround" type="TileMapLayer"]
+tile_set = SubResource("TileSet_aixnj")

@@ -1,0 +1,4 @@
+res://BackGround/back_ground.tscn
+res://Player ship/player_ship.tscn
+res://levels/world.tscn
+res://Player ship/player_ship.gd

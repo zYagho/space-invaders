@@ -1,0 +1,38 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1736019156
+icon.svg::CompressedTexture2D::4625073167736620874::1735867886::1736019158::1::::<><>::
+LICENSE.txt::TextFile::-1::1594740744::0::1::::<><>::
+README.md::TextFile::-1::1736017722::0::1::::<><>::
+::res://BackGround/::1735867939
+Space_BG (2 frames) (64 x 64).png::CompressedTexture2D::1130181629964149415::1641908818::1736019158::1::::<><>::
+::res://Effects/::1735867894
+Explosion (16 x 16).png::CompressedTexture2D::7746063659519378926::1641907518::1736019158::1::::<><>::
+Sparkle (16 x 16).png::CompressedTexture2D::3817425492722479956::1641907542::1736019158::1::::<><>::
+::res://Enemies/::1735867894
+Alan (16 x 16).png::CompressedTexture2D::2431420027996844819::1641907666::1736019158::1::::<><>::
+Bon_Bon (16 x 16).png::CompressedTexture2D::1225941578422949086::1641907630::1736019158::1::::<><>::
+Lips (16 x 16).png::CompressedTexture2D::622836597764648763::1641907648::1736019158::1::::<><>::
+::res://Items/::1735867894
+Circle_+_Square_+_Missile_pick-ups (16 x 16).png::CompressedTexture2D::4718816800412700644::1641907902::1736019158::1::::<><>::
+Power_item (16 x 16).png::CompressedTexture2D::8396357519864412932::1641907958::1736019158::1::::<><>::
+::res://Player ship/::1735867894
+Boosters (16 x 16).png::CompressedTexture2D::5605980904921855329::1641908102::1736019158::1::::<><>::
+Boosters_left (16 x 16).png::CompressedTexture2D::8416514482955440000::1641908090::1736019158::1::::<><>::
+Boosters_right (16 x 16).png::CompressedTexture2D::5137422515741662168::1641908114::1736019158::1::::<><>::
+Player_ship (16 x 16).png::CompressedTexture2D::7083559363983920520::1641908018::1736019158::1::::<><>::
+::res://Projectiles/::1735867894
+Enemy_projectile (16 x 16).png::CompressedTexture2D::5721159456657321794::1641908202::1736019158::1::::<><>::
+Player_beam (16 x 16).png::CompressedTexture2D::2696023589637932746::1641908254::1736019158::1::::<><>::
+Player_charged_beam (16 x 16).png::CompressedTexture2D::6502044028665364989::1641908272::1736019158::1::::<><>::
+Player_charged_donut_shot (16 x 16).png::CompressedTexture2D::9003513191618596883::1641908330::1736019158::1::::<><>::
+Player_charged_square_shot (16 x 16).png::CompressedTexture2D::2576701448670515352::1641908388::1736019158::1::::<><>::
+Player_donut_shot (16 x 16).png::CompressedTexture2D::5950896265572023141::1641908318::1736019158::1::::<><>::
+Player_missile_shots (16 x 16).png::CompressedTexture2D::3003677915741913586::1641908446::1736019158::1::::<><>::
+Player_square_shot (16 x 16).png::CompressedTexture2D::494613874069147019::1641908366::1736019158::1::::<><>::
+::res://UI objects/::1735867894
+GAME_OVER (72 x 8).png::CompressedTexture2D::6210654686793495537::1641908766::1736019158::1::::<><>::
+Item_held_box (16 x 16).png::CompressedTexture2D::5094478910666388787::1641908654::1736019158::1::::<><>::
+Number_font (8 x 8).png::CompressedTexture2D::2013203419754660096::1641908698::1736019158::1::::<><>::
+Player_life_icon (16 x 16).png::CompressedTexture2D::1366286721122136367::1641908672::1736019158::1::::<><>::
+Power_+_charge_bars (full + empty) (32 x 16).png::CompressedTexture2D::7115139705442327492::1641908596::1736019158::1::::<><>::
+START (48 x 8).png::CompressedTexture2D::2954669181565337047::1641908730::1736019158::1::::<><>::
