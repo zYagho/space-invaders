@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ba6v0hxcjm7lo"]
+
+[ext_resource type="PackedScene" uid="uid://ceeop27l0bwoj" path="res://CharacterBase/character_base.tscn" id="1_1qwt4"]
+[ext_resource type="Script" path="res://Enemies/enemy_base.gd" id="2_0x7kl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jish6"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssv3"]
+size = Vector2(18, 15)
+
+[node name="EnemyBase" instance=ExtResource("1_1qwt4")]
+position = Vector2(35, 21)
+script = ExtResource("2_0x7kl")
+_speed = 100.0
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_jish6")
+autoplay = "idle"
+frame_progress = 0.0846044
+
+[node name="Collision" parent="." index="1"]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_1ssv3")
+
+[node name="SpawnProjectile" parent="." index="2"]
+position = Vector2(1, 7)

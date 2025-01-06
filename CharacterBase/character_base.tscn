@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceeop27l0bwoj"]
+
+[ext_resource type="Script" path="res://CharacterBase/character_base.gd" id="1_2n6x8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yx15p"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBase" type="CharacterBody2D" node_paths=PackedStringArray("_timer_to_shoot", "_spawn_projectile", "_texture")]
+script = ExtResource("1_2n6x8")
+_timer_to_shoot = NodePath("TimerToShoot")
+_spawn_projectile = NodePath("SpawnProjectile")
+_texture = NodePath("Texture")
+
+[node name="Texture" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_yx15p")
+animation = &"idle"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="SpawnProjectile" type="Marker2D" parent="."]
+
+[node name="TimerToShoot" type="Timer" parent="."]
+
+[connection signal="timeout" from="TimerToShoot" to="." method="_on_timer_to_shoot_timeout"]

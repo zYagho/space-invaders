@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgdoff3k8j44s"]
+
+[ext_resource type="PackedScene" uid="uid://jvl5p3i60f7y" path="res://Projectiles/projectile.tscn" id="1_p1i3o"]
+[ext_resource type="Texture2D" uid="uid://ben8d5rkw0bio" path="res://Projectiles/Player_beam (16 x 16).png" id="2_65t7c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jxu3o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_65t7c")
+}],
+"loop": true,
+"name": &"double_shot",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w70dh"]
+radius = 7.0
+
+[node name="ProjectilePlayerShip" instance=ExtResource("1_p1i3o")]
+_direction = Vector2(0, -1)
+_speed = 250.0
+_animation_shot = "double_shot"
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_jxu3o")
+animation = &"double_shot"
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("CircleShape2D_w70dh")
+
+[node name="Timer" parent="." index="2"]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

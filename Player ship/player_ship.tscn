@@ -1,25 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://n5uxdb8s7lc8"]
+[gd_scene load_steps=9 format=3 uid="uid://bxhym0h616s4c"]
 
+[ext_resource type="PackedScene" uid="uid://ceeop27l0bwoj" path="res://CharacterBase/character_base.tscn" id="1_2pojv"]
 [ext_resource type="Script" path="res://Player ship/player_ship.gd" id="1_6cl8i"]
 [ext_resource type="Texture2D" uid="uid://c76lgndpbdppg" path="res://Player ship/Player_ship (16 x 16).png" id="1_xl1iw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibf5x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_26tlo"]
 atlas = ExtResource("1_xl1iw")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lutnv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_55bhx"]
 atlas = ExtResource("1_xl1iw")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p7cbt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eaam"]
 atlas = ExtResource("1_xl1iw")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rkrie"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_reip7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ibf5x")
+"texture": SubResource("AtlasTexture_26tlo")
 }],
 "loop": true,
 "name": &"idle",
@@ -27,32 +28,33 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lutnv")
+"texture": SubResource("AtlasTexture_55bhx")
 }],
-"loop": false,
+"loop": true,
 "name": &"left",
 "speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p7cbt")
+"texture": SubResource("AtlasTexture_0eaam")
 }],
-"loop": false,
+"loop": true,
 "name": &"rigth",
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_11mcm"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybdhg"]
 size = Vector2(14, 12)
 
-[node name="PlayerShip" type="CharacterBody2D" node_paths=PackedStringArray("_texture")]
+[node name="PlayerShip" instance=ExtResource("1_2pojv")]
 script = ExtResource("1_6cl8i")
-_texture = NodePath("Texture")
+_speed = 200.0
 
-[node name="Texture" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_rkrie")
-animation = &"idle"
-autoplay = "idle"
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_reip7")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_11mcm")
+[node name="Collision" parent="." index="1"]
+shape = SubResource("RectangleShape2D_ybdhg")
+
+[node name="SpawnProjectile" parent="." index="2"]
+position = Vector2(0, -7)
