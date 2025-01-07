@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ba6v0hxcjm7lo"]
+[gd_scene load_steps=6 format=3 uid="uid://ba6v0hxcjm7lo"]
 
 [ext_resource type="PackedScene" uid="uid://ceeop27l0bwoj" path="res://CharacterBase/character_base.tscn" id="1_1qwt4"]
 [ext_resource type="Script" path="res://Enemies/enemy_base.gd" id="2_0x7kl"]
@@ -12,7 +12,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1ssv3"]
-size = Vector2(18, 15)
+size = Vector2(16, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hpch"]
+size = Vector2(16, 13)
 
 [node name="EnemyBase" instance=ExtResource("1_1qwt4")]
 script = ExtResource("2_0x7kl")
@@ -26,11 +29,23 @@ autoplay = "idle"
 [node name="Collision" parent="." index="1"]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_1ssv3")
+disabled = true
 
 [node name="SpawnProjectile" parent="." index="2"]
 position = Vector2(1, 9)
 
+[node name="TimerToShoot" parent="." index="3"]
+wait_time = 0.5
+autostart = true
+
 [node name="TimerSwapDirection" type="Timer" parent="." index="6"]
 autostart = true
 
+[node name="HitBox" type="Area2D" parent="." index="7"]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox" index="0"]
+position = Vector2(1, -0.5)
+shape = SubResource("RectangleShape2D_4hpch")
+
 [connection signal="timeout" from="TimerSwapDirection" to="." method="_on_timer_swap_direction_timeout"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]

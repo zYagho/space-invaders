@@ -106,9 +106,8 @@ animations = [{
 [node name="Texture" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_il1vp")
 
+[node name="Collision" parent="." index="1"]
+position = Vector2(1, -1.5)
+
 [node name="SpawnProjectile" parent="." index="2"]
 position = Vector2(1, 15)
-
-[node name="TimerToShoot" parent="." index="3"]
-wait_time = 0.5
-autostart = true

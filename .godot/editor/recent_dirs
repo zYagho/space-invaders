@@ -1,7 +1,7 @@
-res://ScriptsUtils
-res://Projectiles
 res://Effects
 res://Enemies
+res://ScriptsUtils
+res://Projectiles
 res://Singletons
 res://CharacterBase
 res://Player ship

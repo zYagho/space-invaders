@@ -3,7 +3,5 @@ res://Player ship/player_ship.tscn
 res://Enemies/enemy_base.tscn
 res://Projectiles/projectile.tscn
 res://Enemies/alan.tscn
-res://Enemies/enemy_base.gd
-res://ScriptsUtils/spawner_enemy.gd
-res://Projectiles/projectile.gd
-res://Player ship/player_ship.gd
+res://Enemies/bon_bon.tscn
+res://Enemies/lips.tscn

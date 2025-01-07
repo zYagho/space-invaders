@@ -6,7 +6,6 @@ const PROJECTILE = preload("res://Projectiles/projectile.tscn")
 var _can_swap_direction: bool = true
 
 func _ready() -> void:
-	add_to_group("Enemy")
 	_direction = [-1, 1][randi() % 2]
 	_can_shoot = false
 	_shoot_animation = "enemy_shot"
@@ -21,7 +20,7 @@ func _shoot() -> void:
 	_projectile.set_direction(Vector2(0,1))
 	_projectile.set_shoot_animation(_shoot_animation)
 	_projectile.set_damage(3)
-	_projectile.set_entity(self)
+	_projectile.set_emissor("EnemyBase")
 	add_sibling(_projectile)
 	_projectile.global_position = _spawn_projectile.global_position
 	
@@ -53,3 +52,9 @@ func update_direction() -> void:
 
 func _on_timer_swap_direction_timeout():
 	_can_swap_direction = true
+	
+func _on_hit_box_area_entered(_area):
+	if _area is Projectile:
+		if _area.get_emissor() == "PlayerShip":
+			take_damage(_area.get_damage())
+			_area.queue_free()

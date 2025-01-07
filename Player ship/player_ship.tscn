@@ -58,4 +58,4 @@ sprite_frames = SubResource("SpriteFrames_reip7")
 shape = SubResource("RectangleShape2D_ybdhg")
 
 [node name="SpawnProjectile" parent="." index="2"]
-position = Vector2(0, -7)
+position = Vector2(0, -16)

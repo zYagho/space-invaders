@@ -41,7 +41,7 @@ position = Vector2(320, 120)
 shape = SubResource("RectangleShape2D_hyoo3")
 
 [node name="SpawnEnemyLimitDown" type="Marker2D" parent="."]
-position = Vector2(16, 87)
+position = Vector2(302, 87)
 
 [node name="SpawnEnemyLimitUp" type="Marker2D" parent="."]
 position = Vector2(16, 12)

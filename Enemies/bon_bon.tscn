@@ -1,0 +1,93 @@
+[gd_scene load_steps=15 format=3 uid="uid://copgy2031owbm"]
+
+[ext_resource type="PackedScene" uid="uid://ba6v0hxcjm7lo" path="res://Enemies/enemy_base.tscn" id="1_5s7c2"]
+[ext_resource type="Texture2D" uid="uid://dimisiq0lk0oo" path="res://Effects/Explosion (16 x 16).png" id="2_w6vou"]
+[ext_resource type="Texture2D" uid="uid://rp4cw7uxowiw" path="res://Enemies/Bon_Bon (16 x 16).png" id="3_igwgw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u66vf"]
+atlas = ExtResource("2_w6vou")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4e7h"]
+atlas = ExtResource("2_w6vou")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkwno"]
+atlas = ExtResource("2_w6vou")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njpca"]
+atlas = ExtResource("2_w6vou")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in1ox"]
+atlas = ExtResource("2_w6vou")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyp47"]
+atlas = ExtResource("2_w6vou")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpmib"]
+atlas = ExtResource("3_igwgw")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3c5j"]
+atlas = ExtResource("3_igwgw")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gscpf"]
+atlas = ExtResource("3_igwgw")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_daiw7"]
+atlas = ExtResource("3_igwgw")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ynd5r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u66vf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4e7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkwno")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njpca")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in1ox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uyp47")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpmib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3c5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gscpf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_daiw7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="BonBon" instance=ExtResource("1_5s7c2")]
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_ynd5r")

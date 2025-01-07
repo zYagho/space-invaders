@@ -1,0 +1,101 @@
+[gd_scene load_steps=16 format=3 uid="uid://vt4g517yx8u6"]
+
+[ext_resource type="PackedScene" uid="uid://ba6v0hxcjm7lo" path="res://Enemies/enemy_base.tscn" id="1_usut8"]
+[ext_resource type="Texture2D" uid="uid://dimisiq0lk0oo" path="res://Effects/Explosion (16 x 16).png" id="2_4qtej"]
+[ext_resource type="Texture2D" uid="uid://i4ya7dm4q5yd" path="res://Enemies/Lips (16 x 16).png" id="3_6873q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq7bb"]
+atlas = ExtResource("2_4qtej")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yi0ms"]
+atlas = ExtResource("2_4qtej")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xkxq"]
+atlas = ExtResource("2_4qtej")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwpwi"]
+atlas = ExtResource("2_4qtej")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8kvq"]
+atlas = ExtResource("2_4qtej")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qydy"]
+atlas = ExtResource("2_4qtej")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhdcy"]
+atlas = ExtResource("3_6873q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wenjo"]
+atlas = ExtResource("3_6873q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thq5w"]
+atlas = ExtResource("3_6873q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5qjx"]
+atlas = ExtResource("3_6873q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pp4i7"]
+atlas = ExtResource("3_6873q")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mlu7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq7bb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yi0ms")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xkxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwpwi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8kvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qydy")
+}],
+"loop": false,
+"name": &"dead",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhdcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wenjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thq5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5qjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pp4i7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Lips" instance=ExtResource("1_usut8")]
+
+[node name="Texture" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_mlu7m")
+animation = &"dead"

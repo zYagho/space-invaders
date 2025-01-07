@@ -10,7 +10,7 @@ class_name Projectile
 @export_category("Objects")
 @export var _texture: AnimatedSprite2D
 
-var _entity: CharacterBase 
+var _emissor: String
 
 func _physics_process(_delta: float) -> void:
 	position += _direction * _speed * _delta
@@ -21,6 +21,8 @@ func _on_timer_timeout() -> void:
 func set_direction(_direc: Vector2) -> void:
 	_direction = _direc
 
+func get_damage() -> int:
+	return _damage
 func set_damage(_dam: int) -> void:
 	_damage = _dam
 	
@@ -28,17 +30,15 @@ func _on_body_entered(_body):
 	
 	if _body == null:
 		return
+	
+	if _body is PlayerShip and _emissor == "EnemyBase":
+		_body.take_damage(_damage)
+		queue_free()
+	
+func set_emissor(_emi) -> void:
+	_emissor = _emi
+func get_emissor() -> String:
+	return _emissor
 
-	if _body == _entity:
-		return
-		
-	if _body is Node:
-		if _entity.is_in_group("Player") and _body.is_in_group("Enemy"):
-			if _body.has_method("take_damage"):
-				_body.take_damage(_damage)
-	
-func set_entity(ent) -> void:
-	_entity = ent
-	
 func set_shoot_animation(_animation_name: String) -> void:
 	_texture.play(_animation_name)
