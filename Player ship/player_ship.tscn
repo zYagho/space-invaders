@@ -49,6 +49,7 @@ size = Vector2(14, 12)
 [node name="PlayerShip" instance=ExtResource("1_2pojv")]
 script = ExtResource("1_6cl8i")
 _speed = 200.0
+_damage = 3
 
 [node name="Texture" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_reip7")

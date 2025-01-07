@@ -1,13 +1,9 @@
-res://Player ship/player_ship.gd
-res://Projectiles/projectile.tscn
-res://Projectiles/projectile.gd
-res://Projectiles/projectile_player_ship.tscn
-res://BackGround/back_ground.tscn
 res://levels/world.tscn
 res://Player ship/player_ship.tscn
-res://CharacterBase/character_base.tscn
-res://CharacterBase/character_base.gd
-res://Enemies/alan.tscn
-res://Enemies/alan.gd
-res://Singletons/global.gd
 res://Enemies/enemy_base.tscn
+res://Projectiles/projectile.tscn
+res://Enemies/alan.tscn
+res://Enemies/enemy_base.gd
+res://ScriptsUtils/spawner_enemy.gd
+res://Projectiles/projectile.gd
+res://Player ship/player_ship.gd

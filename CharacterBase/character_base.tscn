@@ -10,8 +10,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBase" type="CharacterBody2D" node_paths=PackedStringArray("_timer_to_shoot", "_spawn_projectile", "_texture")]
+[node name="CharacterBase" type="CharacterBody2D" node_paths=PackedStringArray("_rigth_collider", "_left_collider", "_timer_to_shoot", "_spawn_projectile", "_texture")]
 script = ExtResource("1_2n6x8")
+_rigth_collider = NodePath("RigthCollider")
+_left_collider = NodePath("LeftCollider")
 _timer_to_shoot = NodePath("TimerToShoot")
 _spawn_projectile = NodePath("SpawnProjectile")
 _texture = NodePath("Texture")
@@ -26,4 +28,11 @@ animation = &"idle"
 
 [node name="TimerToShoot" type="Timer" parent="."]
 
+[node name="RigthCollider" type="RayCast2D" parent="."]
+target_position = Vector2(20, 0)
+
+[node name="LeftCollider" type="RayCast2D" parent="."]
+target_position = Vector2(-20, 0)
+
+[connection signal="animation_finished" from="Texture" to="." method="_on_texture_animation_finished"]
 [connection signal="timeout" from="TimerToShoot" to="." method="_on_timer_to_shoot_timeout"]

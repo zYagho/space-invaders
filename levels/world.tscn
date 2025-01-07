@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=4 uid="uid://b7w1deg56vewj"]
+[gd_scene load_steps=6 format=4 uid="uid://b7w1deg56vewj"]
 
 [ext_resource type="PackedScene" uid="uid://cabtorck80qiq" path="res://BackGround/back_ground.tscn" id="1_g6r5a"]
 [ext_resource type="PackedScene" uid="uid://bxhym0h616s4c" path="res://Player ship/player_ship.tscn" id="2_otxj1"]
-[ext_resource type="PackedScene" uid="uid://fwwv04fh6h6n" path="res://Enemies/alan.tscn" id="3_10p7j"]
+[ext_resource type="Script" path="res://ScriptsUtils/spawner_enemy.gd" id="3_nb0wh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jok4i"]
+size = Vector2(20, 240)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hyoo3"]
+size = Vector2(20, 240)
 
 [node name="World" type="Node2D"]
 
@@ -10,7 +16,34 @@
 tile_map_data = PackedByteArray("AAAAAAMAAQAAAAAAAAABAAMAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAEAAIAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAAAAAQAAAAAAAAADAAAAAQAAAAAAAAACAAAAAQAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAADAAIAAQAAAAAAAAADAAEAAQAAAAAAAAACAAEAAQAAAAAAAAABAAEAAQAAAAAAAAA=")
 
 [node name="PlayerShip" parent="." instance=ExtResource("2_otxj1")]
-position = Vector2(163, 209)
+position = Vector2(166, 214)
 
-[node name="Alan" parent="." instance=ExtResource("3_10p7j")]
-position = Vector2(36, 38)
+[node name="SpawnerEnemy" type="Node2D" parent="." node_paths=PackedStringArray("_spawn_limit_down", "_spawn_limit_up", "_timer_spawn")]
+script = ExtResource("3_nb0wh")
+_spawn_limit_down = NodePath("../SpawnEnemyLimitDown")
+_spawn_limit_up = NodePath("../SpawnEnemyLimitUp")
+_timer_spawn = NodePath("TimerSpawn")
+
+[node name="TimerSpawn" type="Timer" parent="SpawnerEnemy"]
+wait_time = 5.0
+autostart = true
+
+[node name="RigthMax" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="RigthMax"]
+position = Vector2(0, 120)
+shape = SubResource("RectangleShape2D_jok4i")
+
+[node name="LeftMax" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="LeftMax"]
+position = Vector2(320, 120)
+shape = SubResource("RectangleShape2D_hyoo3")
+
+[node name="SpawnEnemyLimitDown" type="Marker2D" parent="."]
+position = Vector2(16, 87)
+
+[node name="SpawnEnemyLimitUp" type="Marker2D" parent="."]
+position = Vector2(16, 12)
+
+[connection signal="timeout" from="SpawnerEnemy/TimerSpawn" to="SpawnerEnemy" method="_on_timer_spawn_timeout"]

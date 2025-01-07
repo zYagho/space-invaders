@@ -15,7 +15,6 @@ animations = [{
 size = Vector2(18, 15)
 
 [node name="EnemyBase" instance=ExtResource("1_1qwt4")]
-position = Vector2(35, 21)
 script = ExtResource("2_0x7kl")
 _speed = 100.0
 
@@ -23,11 +22,15 @@ _speed = 100.0
 position = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_jish6")
 autoplay = "idle"
-frame_progress = 0.0846044
 
 [node name="Collision" parent="." index="1"]
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_1ssv3")
 
 [node name="SpawnProjectile" parent="." index="2"]
-position = Vector2(1, 7)
+position = Vector2(1, 9)
+
+[node name="TimerSwapDirection" type="Timer" parent="." index="6"]
+autostart = true
+
+[connection signal="timeout" from="TimerSwapDirection" to="." method="_on_timer_swap_direction_timeout"]

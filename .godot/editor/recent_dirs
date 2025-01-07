@@ -1,7 +1,9 @@
+res://ScriptsUtils
+res://Projectiles
+res://Effects
 res://Enemies
 res://Singletons
 res://CharacterBase
 res://Player ship
-res://Projectiles
 res://levels
 res://BackGround
